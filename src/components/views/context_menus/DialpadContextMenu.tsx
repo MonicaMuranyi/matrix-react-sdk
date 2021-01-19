@@ -38,8 +38,8 @@ export default class DialpadContextMenu extends React.Component<IProps, IState> 
     }
 
     onDigitPress = (digit) => {
-        this.props.call.sendDtmfDigit(digit);
-        this.setState({value: this.state.value + digit});
+        //this.props.call.sendDtmfDigit(digit);
+        //this.setState({value: this.state.value + digit});
     }
 
     render() {
