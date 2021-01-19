@@ -1431,9 +1431,11 @@ const UserInfoHeader: React.FC<{
     let presenceLastActiveAgo;
     let presenceCurrentlyActive;
     let statusMessage;
+    let presenceStatusMsg;
 
     if (member instanceof RoomMember && member.user) {
         presenceState = member.user.presence;
+        presenceStatusMsg = member.user.presenceStatusMsg;
         presenceLastActiveAgo = member.user.lastActiveAgo;
         presenceCurrentlyActive = member.user.currentlyActive;
 
@@ -1455,6 +1457,7 @@ const UserInfoHeader: React.FC<{
                 activeAgo={presenceLastActiveAgo}
                 currentlyActive={presenceCurrentlyActive}
                 presenceState={presenceState}
+                statusMsg={presenceStatusMsg}
             />
         );
     }

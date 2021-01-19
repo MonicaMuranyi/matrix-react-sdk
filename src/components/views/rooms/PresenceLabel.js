@@ -32,11 +32,15 @@ export default class PresenceLabel extends React.Component {
 
         // offline, online, etc
         presenceState: PropTypes.string,
+
+        // An optional description to accompany the presence (e.g. "Busy working")
+        statusMessage: PropTypes.string,
     };
 
     static defaultProps = {
         activeAgo: -1,
         presenceState: null,
+        statusMessage: 'Available',
     };
 
     // Return duration as a string using appropriate time units
@@ -82,6 +86,7 @@ export default class PresenceLabel extends React.Component {
         return (
             <div className="mx_PresenceLabel">
                 { this.getPrettyPresence(this.props.presenceState, this.props.activeAgo, this.props.currentlyActive) }
+                <span> { this.props.statusMessage ? '(' + this.props.statusMessage + ')' : '' } </span>
             </div>
         );
     }
